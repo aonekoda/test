@@ -1,0 +1,37 @@
+pandas 를 임포트 하시오.
+import pandas as pd
+
+제공한 파일 movie.csv를 읽어들이시오.
+df = pd.read_csv('./data/movie.csv')
+
+읽어들인 df의 앞5건 뒤5건을 출력하시오.
+df.head()
+df.tail()
+
+df의 행,열의 갯수
+df.shape
+df의 기본적인 구조 정보를 출력
+df.info()
+
+'color','movie_title','director_name','imdb_score' col만 출력하시오.
+df[['color','movie_title','director_name','imdb_score']].head()
+
+loc를 사용하여 10번 index의 값을출력
+
+df.loc[10]
+
+10번 index의 ['movie_title', 'title_year' col만 출력
+df.loc[10,['movie_title', 'title_year']]
+
+color여부로 그룹을 나누고 budget의 평균을
+df.groupby('color')['budget'].mean()
+
+'genres'로 그룹을 나누고 imdb_Score, budget의 평균
+df.groupby(['genres'])['imdb_score','budget'].mean()
+
+
+각 년도별 imdb_score의 평균을 선 그래프로 표시
+%matplotlib inline
+x = df.groupby('title_year')['imdb_score'].mean()
+
+x.plot()
