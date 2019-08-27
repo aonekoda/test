@@ -1,0 +1,165 @@
+print('Hello World')
+print('철수가 "안녕하세요." 라고 말했다.')
+print("안녕하세요.\n만나서\t\t반갑습니다.")
+print('naver/kakao/sk/samsung')
+
+# 추가적으로... 
+# '/' 를 기준으로 단어를 split 할 수 있다.
+print('naver/kakao/sk/samsung'.split('/'))
+
+string = 'ajkdfhkadlwpeprhf'
+# TODO
+len(string)
+
+t1 = 'python'
+t2 = 'java'
+
+print((t1+' '+t2+' ')*4)
+
+lang = 'python'
+print(lang[0], lang[2])
+
+phone_number = "010-1111-2222"
+print(phone_number.replace('-',' '))
+
+name = '홍길동'
+age = '30.5'
+grade = '합격'
+
+print('이름은 {}입니다. 나이는 {}세, 결과는 {}입니다.'.format(name, age, grade))
+print('이름은 %s입니다. 나이는 %s세, 결과는 %s입니다.'%(name, age, grade))
+print(f'이름은 {name}입니다. 나이는 {age}세, 결과는 {grade}입니다.')
+
+kor = 70
+math = 80
+eng = 55
+
+print('kor = 70, math = 80, eng = 55, 평균 =', (kor+math+eng)/3)
+
+print(2**3)
+print(17%3)
+x = 12
+
+print('x는','짝수' if (x % 2) == 0 else '홀수')
+=====================================================
+play_list = ['밤편지','가을아침','비밀정원']
+
+play_list
+
+play_list.append('나만 봄')
+play_list
+
+play_list.insert(2,'노래방에서')
+play_list
+
+play_list.sort(reverse=True)
+play_list
+
+nums = [1, 2, 3, 4, 5, 6, 7]
+# TODO
+print(max(nums))
+print(min(nums))
+
+print(sum(nums))
+print(nums[0]+nums[1]+nums[2]+nums[3]+nums[4]+nums[5]+nums[6])
+
+food = ["피자", "김밥", "만두", "김치만두", "쫄면", "쏘세지", "라면", "팥빙수", "김치전"]
+# TODO
+len(food)
+
+price = ['20180728', 100, 130, 140, 150, 160, 170]
+price[1:]
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+nums[::2]
+
+
+interest_0 = ['삼성전자', 'LG전자', 'SK Hynix']
+interest_1 = interest_0
+interest_1[0] = 'Naver'
+print(interest_0)
+
+my_var = ()
+
+t1 = (10,)
+my_var = my_var + t1
+my_var
+
+t = ('apple',)
+print(t)
+type(t)
+
+interest = ['삼성전자', 'LG전자', 'SK Hynix']
+tuple(interest)
+
+my_tuple = (1, 2, 3)
+a, b, c = my_tuple
+print(a + b + c) 
+
+a = [1,2,3,3,3,4,4,4,5]
+set(a)
+
+fruits = {'사과':1000, '바나나':1200, '딸기':1800}
+
+fruits['키위'] = 1200
+fruits['망고'] = 1500
+fruits
+
+print('키위가격:', fruits['키위'])
+
+fruits['키위'] = 1300
+fruits
+
+del fruits['키위']
+fruits
+
+fruits.keys()
+fruits.values()
+fruits.items()
+
+=================================================
+
+if 4 < 3:  
+    print("Hello World.")  
+else:  
+    print("Hi, there.") 
+    
+x = input("숫자를 입력하세요...")
+x = int(x)
+
+print(x + 10)
+
+fruit = ["사과", "포도", "홍시"]
+
+x = input("내가 좋아하는과일은?")
+
+if x in fruit :
+    print('정답입니다.')
+else:
+    print('오답입니다.')
+
+menu = ["김밥", "라면", "튀김"]
+
+for x in menu :
+    print("오늘의 메뉴:", x)
+    
+my_list = [3, -20, -3, 44]
+
+print([x for x in my_list if x<0])
+
+for x in my_list :
+    if x < 0 :
+        print(x)
+
+my_list = [3, 4, 5]
+total = 0
+
+for x in my_list :
+    total = total + x
+print(total)
+
+my_list = [13, 21, 12, 14, 30, 18]
+
+for x in my_list :
+    if (x >= 10) and (x <=20) and (x%3==0) :
+        print(x)
