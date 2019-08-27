@@ -163,3 +163,60 @@ my_list = [13, 21, 12, 14, 30, 18]
 for x in my_list :
     if (x >= 10) and (x <=20) and (x%3==0) :
         print(x)
+
+========================
+함수
+
+def odd_even(num):
+    if num % 2 == 0 :
+        return "짝수"
+    else:
+        return "홀수"
+    
+odd_even(19)
+
+def plus_minus(n1, n2):
+    return (n1 + n2, n1 - n2)
+
+x,y = plus_minus(30, 20)
+print("합:", x, "차:", y)
+
+=================
+내장함수
+
+keys = ('apple', 'pear', 'peach')
+vals = (300, 250, 400)
+
+dict(zip(keys, vals))
+
+a = [-8, 2, 7, 5, -3, 5, 0, 1]
+
+max(a)+min(a)
+
+list(range(11))
+
+names = ['철수', '영희', '영수']
+
+for i, v in enumerate(names):
+    print(i,'번',v)
+    
+ def func(x):
+    return x * 2
+
+a = [1,2,3,4,5]
+
+list(map(func,a))
+
+def positive(num) :
+    if num > 0 :
+        return True
+    else:
+        return False
+    
+a = [10,-2,201,-2,-34,23,4]
+
+list(filter(positive, a))
+
+x = 3.141592
+
+round(x, 2)
