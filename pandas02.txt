@@ -1,0 +1,31 @@
+05
+concat,merge
+
+import pandas as pd
+
+s_2016 = pd.read_csv('../data/stocks_2016.csv')
+s_2016
+s_2017 = pd.read_csv('../data/stocks_2017.csv')
+s_2017
+s_2018 = pd.read_csv('../data/stocks_2018.csv')
+s_2018
+
+pd.concat([s_2016, s_2017, s_2018], ignore_index=True)
+pd.concat([s_2016, s_2017, s_2018], axis=1)
+
+stock_info = pd.read_csv('../data/stock_info.csv')
+stock_info
+
+stock_info.merge(s_2016)
+stock_info.merge(s_2016, how='left')
+
+06 누락값
+isnull
+fillna
+dropna
+
+07 melt, pivot, drop_duplicates
+
+08 to_numeric, categorical 
+
+09 문자열 re
