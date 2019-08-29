@@ -1,0 +1,7 @@
+10 apply
+
+11 group 연산
+agg메소드
+
+12 시계열
+https://datascienceschool.net/view-notebook/8959673a97214e8fafdb159f254185e9/
