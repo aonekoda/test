@@ -1,0 +1,54 @@
+import numpy as np
+import pandas as pd
+import torch
+from torch.utils.data import Dataset
+
+from sklearn.datasets import load_diabetes
+
+diabetes = load_diabetes()
+
+
+class dataset(Dataset):
+    def __init__(self):
+        self.x_data = diabetes.data
+        self.y_data = diabetes.target.reshape(-1,1)
+    def __getitem__(self, idx):
+        x = torch.FloatTensor(self.x_data[idx])
+        y = torch.FloatTensor(self.y_data[idx])
+        return x, y
+    def __len__(self):
+        return len(self.x_data)
+        
+dataset = dataset()
+
+dataset.__getitem__([1])
+
+from torch.utils.data import DataLoader
+
+dataloader = DataLoader(dataset, batch_size=10, shuffle=True)
+
+x, y = iter(dataloader).next()
+
+model = torch.nn.Linear(10,1)
+criterion = torch.nn.MSELoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.05) 
+
+
+for epoch in range(1000):
+    running_loss = 0
+    for data, target in dataloader:
+        optimizer.zero_grad()
+        pred = model(data)
+        loss = criterion(pred, target)
+        loss.backward()
+        optimizer.step()
+        running_loss += loss.item()
+    else:
+        if epoch % 100 == 0 :
+            print(f"Training loss: {running_loss/len(dataloader)}")
+
+new_var =  torch.FloatTensor([[ 0.0163, -0.0446, -0.0633, -0.0573, -0.0580, -0.0489,  0.0081, -0.0395,
+         -0.0595, -0.0674]])
+with torch.no_grad():
+    y_hat = model(new_var)
+print(y_hat)
