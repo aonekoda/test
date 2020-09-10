@@ -1,0 +1,13 @@
+< graphviz의 설치 >
+1. ftp://10.229.213.72 
+		패스워드 : swfc@@
+		--> ftp://10.229.213.72/HDD1/SWFC20_B/
+		--> Datamining --> graphviz-2.38-win32.msi 파일을 copy
+
+2. graphviz-2.38-win32.msi 을 더블클릭하여 설치
+
+3. !pip install --proxy http://12.26.226.2:8080 --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org graphviz
+
+4. 
+import os 
+os.environ["PATH"] += os.pathsep +  'C:/Program Files (x86)/Graphviz2.38/bin'
